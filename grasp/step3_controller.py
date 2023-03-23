@@ -69,5 +69,37 @@ class App(tk.Tk):
             activestyle="none",
         )
         
+        self.product_list.pack(fill=tk.X)
+        self.product_list.bind("<FocusOut>", self.on_focus_out)
+        self.product_list.bind("<<ListBoxSelect>>", self.on_select_product)
+        
+        self.add_product_button = tk.Button(
+            self.frame,
+            text=ADD_BTN_TEXT,
+            width=15,
+            pady=5,
+            state=tk.DISABLED,
+            command=self.add_product
+        )
+        self.add_product_button.pack(side=tk.TOP, anchor=tk.NW)
+        
+        self.del_product_button = tk.Button(
+            self.frame,
+            text=DELETE_BTN_TEXT,
+            width=15,
+            pady=5,
+            state=tk.DISABLED,
+            command=self.delete_product
+        )
+        self.del_product_button.pack(side=tk.TOP, anchor=tk.NW)
+        
+    def add_product(self):
+        name = simpledialog.askstring(title="Add", prompt="Product name:")
+        price = float(simpledialog.askstring(title="Add", prompt="Product price:"))
+        
+        
+         
+        
+        
         
            
