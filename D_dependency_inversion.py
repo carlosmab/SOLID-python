@@ -10,8 +10,6 @@
 # Create an abstract class for implements authorizers
 # Now we can add easily a new authorization method
 
-
-
 from abc import ABC, abstractmethod
 
 
