@@ -15,6 +15,7 @@
 
 from abc import ABC, abstractmethod
 
+
 class Order:
     items = []
     quantities = []
